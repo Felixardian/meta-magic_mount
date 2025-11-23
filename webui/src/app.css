@@ -33,7 +33,6 @@ body {
   padding-top: var(--window-inset-top, 0px);
   padding-bottom: var(--window-inset-bottom, 0px);
   margin: 0;
-  background: var(--nord0);
   color: var(--nord6);
   font-family:
     -apple-system, BlinkMacSystemFont, "SF Pro Text", Inter, "Segoe UI", Arial, sans-serif;
@@ -43,6 +42,10 @@ body {
   display: flex;
   flex-direction: column;
   height: calc(100vh - var(--window-inset-top, 0px) - var(--window-inset-bottom, 0px));
+}
+
+.app-main {
+  background: var(--nord0);
 }
 
 /* Top bar for language selector */
