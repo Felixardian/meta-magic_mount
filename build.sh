@@ -7,9 +7,9 @@ YELLOW='\033[1;33m'
 NC='\033[0m'
 
 # Configuration
-BASE_URL="https://github.com/7a72/meta-magic_mount/releases/download"
-UPDATE_JSON_URL="https://raw.githubusercontent.com/7a72/meta-magic_mount/public/update.json"
-CHANGELOG_URL="https://raw.githubusercontent.com/7a72/meta-magic_mount/public/changelog.md"
+BASE_URL="https://magic-mount.zrlab.org/download"
+UPDATE_JSON_URL="https://magic-mount.zrlab.org/version"
+CHANGELOG_URL="https://magic-mount.zrlab.org/changelog"
 MODULE_ID="org.zrlab.magic_mount"
 
 # Build state
@@ -169,11 +169,11 @@ EOF
     fi
 }
 
-# Generate update.json for release builds
+# Generate version.json for release builds
 generate_update_json() {
     local output_name=$1
     local version_code=$2
-    local file="build/update.json"
+    local file="build/version.json"
     
     cat > "$file" << EOF
 {
@@ -407,7 +407,7 @@ main() {
     log_info "Generated files:"
     if [[ " ${BUILD_TYPES[*]} " =~ " release " ]]; then
         log_info "  build/changelog.md"
-        log_info "  build/update.json"
+        log_info "  build/version.json"
     fi
     for file in "${built_files[@]}"; do
         local size=$(du -h "build/$file" | cut -f1)

@@ -63,9 +63,9 @@ jobs:
         run: |
           git fetch origin
           git switch public
-          cat build/update.json > update.json
+          cat build/version.json > version.json
           cat build/changelog.md > changelog.md
-          git add update.json changelog.md
+          git add version.json changelog.md
           git commit -m "[skip ci] Update build files"
           git push origin public
 
